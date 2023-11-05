@@ -1,12 +1,14 @@
 function criarBaralho() {
-  var naipes = ['Copas', 'Espadas', 'Ouros', 'Paus'];
-  var valores = ['2', '3', '4', '5', '6', '7', 'Q', 'J', 'K', 'A'];
+  var naipes = ['Ouros', 'Espadas', 'Copas', 'Paus'];
+  var naipesSimbolos = ['♦', '♠', '♥', '♣'];
+  var valores = ['4', '5', '6', '7', 'Q', 'J', 'K', 'A', '2', '3'];
   var baralho = [];
 
   for (var naipe of naipes) {
+      var simboloNaipe = naipesSimbolos[naipes.indexOf(naipe)];
       for (var valor of valores) {
-          for (var i = 0; i < 4; i++) { // Adicione quatro unidades de cada carta
-              var carta = valor + ' de ' + naipe;
+          for (var i = 0; i < 4; i++) {
+              var carta = valor + ' ' + simboloNaipe;
               baralho.push(carta);
           }
       }
@@ -14,6 +16,7 @@ function criarBaralho() {
 
   return baralho;
 }
+
 
 function embaralharECriarBaralho() {
   var baralho = criarBaralho();
